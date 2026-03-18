@@ -21,7 +21,7 @@
             <header class="w-100 shadow-sm bg-light">
                 <nav class="d-flex justify-content-between py-2 ">
                     <div class="w-100">
-                        <a href="/blog/"><img src="Public/assets/img/logo.png" alt="Logo fennec qui code" class="w-25" style="min-width:120px"></a>
+                        <a href="/blog/"><img src="/blog/Public/assets/img/logo.png" alt="Logo fennec qui code" class="w-25" style="min-width:120px"></a>
                     </div>
                     <div class="d-flex justify-content-end align-items-center w-100 px-5">
                         <a href="" class="px-1 text-decoration-none text-black">À propos</a>
@@ -31,7 +31,7 @@
                         
                         <?php
                             
-                            if(isset($variables["connected"])) {
+                            if($variables["connected"]) {
                                 
                                    
                         ?>

@@ -19,6 +19,12 @@ $router->get("/loginValidator", "LoginController@loginValidator");
 $router->get("/register", "LoginController@register");
 $router->get("/registerValidator", "LoginController@registerValidator");
 $router->get("/forgotPassword", "LoginController@forgotPassword");
+$router->get("/forgotPassword/forgotValidator", "LoginController@forgotValidator");
+$router->get("/forgotPassword/changePassword", "LoginController@forgotChangePassword");
+
+$router->get("/forgotPassword/{token}", "LoginController@forgotPassword");
+
+
 
 
 $router->get("/admin/dashboard", "AdminController@dashboard");

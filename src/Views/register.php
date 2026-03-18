@@ -18,7 +18,7 @@
 
             <h3>Inscription</h3>
 
-            <a href="/blog/login" class="border px-5 py-1 text-decoration-none text-black mt-2">Je suis deja membre</a>
+            <a href="/blog/login" class="border border-success px-5 py-1 text-decoration-none text-success mt-2">Je suis deja membre</a>
             <hr class="bg-black w-50">
 
             <form action="registerValidator" method="POST" class="mt-3 w-50">

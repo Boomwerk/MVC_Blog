@@ -28,7 +28,7 @@
 
             <h3>Connectez-vous sans limite</h3>
 
-            <a href="/blog/register" class="border px-5 py-1 text-decoration-none text-black mt-2">Je souhaite m'inscrire</a>
+            <a href="/blog/register" class="border border-success px-5 py-1 text-decoration-none mt-2 text-success">Je souhaite m'inscrire</a>
             <hr class="bg-black w-50 mt-4">
 
             <form action="loginValidator" method="POST" class="mt-3 w-50">
@@ -43,7 +43,7 @@
             <hr class="bg-black w-50 mt-4">
 
             <div>
-                <p>Mot de passe oublier ? <a href="">Cliquez ici</a></p>
+                <p>Mot de passe oublier ? <a href="/blog/forgotPassword" class="text-decoration-none text-success">Cliquez ici</a></p>
             </div>
         </div>
 

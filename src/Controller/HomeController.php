@@ -13,7 +13,7 @@ class HomeController
 
         $session = new MidHTTPRequest();
        
-    
+        
 
         
         $title = "[TUTO] Creer des variables en php comme un professionnel pour vous faire embaucher !";

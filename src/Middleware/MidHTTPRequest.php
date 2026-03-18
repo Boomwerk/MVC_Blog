@@ -27,7 +27,7 @@ class MidHTTPRequest{
     public static function redirect(string $url, ?array $msg = []){
         
        
-        if(isset($msg)){
+        if(isset($msg) && !empty($msg)){
             session_start();
             $_SESSION = $msg;
             

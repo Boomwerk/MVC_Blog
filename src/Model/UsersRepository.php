@@ -157,6 +157,56 @@ class UsersRepository {
         }
     }
 
+    public function userExist(string $email){
+
+        $req = $this->bdd->prepare("SELECT email FROM users WHERE email = ?");
+        $req->execute([$email]);
+
+        return $req->rowCount();
+    }
+    
+    public function updateTokenByMail(string $email,string $token){
+        
+        $req = $this->bdd->prepare("UPDATE users SET token = ? WHERE email = ?");
+        $req->execute([$token, $email]);
+
+        return true ;
+        
+
+    }
+
+    public function isTokenValid($token){
+
+        $req = $this->bdd->prepare("SELECT token FROM users WHERE token = ?");
+        $req->execute([$token]);
+        
+        if($req->rowCount() === 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function updatePasswordByToken(string $token, string $password){
+
+
+        if($this->isTokenValid($token)){
+
+            $password = password_hash($password, PASSWORD_DEFAULT);
+
+            $req = $this->bdd->prepare("UPDATE users SET password = ? WHERE token = ?");
+            $req->execute([$password, $token]);
+
+            return true;
+
+        }else{
+
+            return false;
+        }
+
+        
+
+    }
 }
 
 
