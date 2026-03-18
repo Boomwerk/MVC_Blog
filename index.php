@@ -25,7 +25,7 @@ $router->get("/forgotPassword/changePassword", "LoginController@forgotChangePass
 $router->get("/forgotPassword/{token}", "LoginController@forgotPassword");
 
 
-
+$router->get("/user/profil", "UserController@index");
 
 $router->get("/admin/dashboard", "AdminController@dashboard");
 

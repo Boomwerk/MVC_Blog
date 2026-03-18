@@ -10,7 +10,21 @@ class LoginController{
 
 
     public function index(){
-        new MidHTTPRequest();
+
+        $session = new MidHTTPRequest();
+
+       
+
+        if(isset($_SESSION["user"])){
+
+            if($_SESSION["user"]["role"] === 'ADMIN'){
+                return MidHTTPRequest::redirect("/blog/admin/dashboard");
+            }else{
+                return MidHTTPRequest::redirect("/blog/user/profil");
+            }
+
+        }
+
         return Render::renderView("login.php", ["connected" => MidHTTPRequest::isConnected()]);
 
     }

@@ -65,7 +65,7 @@
                 </div>
             </header>
 
-            <main class="p-4 d-flex justify-content-center flex-column">
+            <main class="d-flex justify-content-center flex-column">
 
 <?php
     
