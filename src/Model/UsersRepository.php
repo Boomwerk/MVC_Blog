@@ -43,15 +43,23 @@ class UsersRepository {
                         
                         if(password_verify($password, $data["password"])){
 
+                            if($data["activate"]){
 
-                            if($data["role"] === "ADMIN"){
+                                if($data["role"] === "ADMIN"){
 
-                                return MidHTTPRequest::redirect("/blog/admin/dashboard", ["user" => ["email" => $data["email"], "pseudo" => ["pseudo"], "role" => $data["role"]]]);
+                                    return MidHTTPRequest::redirect("/blog/admin/dashboard", ["user" => ["email" => $data["email"], "pseudo" => ["pseudo"], "role" => $data["role"]]]);
+
+                                }else{
+
+                                    return MidHTTPRequest::redirect("/blog/", ["user" => ["email" => $data["email"], "pseudo" => ["pseudo"], "role" => $data["role"]]]);
+                                }
 
                             }else{
-
-                                return MidHTTPRequest::redirect("/blog/", ["user" => ["email" => $data["email"], "pseudo" => ["pseudo"], "role" => $data["role"]]]);
+                                return MidHTTPRequest::redirect("/blog/login", ["error" => "Votre compte existe mais n'est pas activé, veuillez verifier vos mails "]);
                             }
+
+
+                           
 
                         }else{
                         
@@ -111,6 +119,8 @@ class UsersRepository {
 
                                 $req = $this->bdd->prepare("INSERT INTO users (pseudo, email, role, password, activate, token, created_at) VALUES (?,?,?,?,?,?,NOW())");
                                 $req->execute([$pseudo, $email,$role, $password,false, $token]);
+
+                                // Envoi de mail manquant 
 
 
                                 return MidHTTPRequest::redirect("/blog/login", ["success" => "Inscription réussi! Un lien vous a été envoyé par mail pour activé votre compte."]);
