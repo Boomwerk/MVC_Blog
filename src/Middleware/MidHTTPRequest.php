@@ -38,4 +38,33 @@ class MidHTTPRequest{
         
         return  header("Location: $url");
     }
+
+    public static function isConnected(){
+
+        if(!isset($_SESSION["user"]["role"])){
+            self::disconnect();
+        }
+    }
+
+    public static function isAdmin(){
+        
+        if(!isset($_SESSION["user"]["role"])){
+            self::disconnect();
+        }
+
+        if($_SESSION["user"]["role"] !== "ADMIN"){
+            self::disconnect();
+        }
+
+
+    }
+
+    public static function disconnect(){
+        
+        session_start();
+        $_SESSION = [];
+        session_destroy();
+
+        return self::redirect("/blog/");
+    }
 }
