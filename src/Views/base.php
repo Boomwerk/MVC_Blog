@@ -12,6 +12,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Blog Boomwerk</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
             <link rel="stylesheet" href="Public/assets/css/home.css">
         </head>
@@ -25,11 +26,23 @@
                     <div class="d-flex justify-content-end align-items-center w-100 px-5">
                         <a href="" class="px-1 text-decoration-none text-black">À propos</a>
                         <a href="" class="px-1 text-decoration-none text-black">Contact</a>
-                        <a href="login" class="px-1 text-decoration-none text-black">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                            </svg>
-                        </a>
+                        
+
+                        
+                        <?php
+                            
+                            if(isset($variables["connected"])) {
+                                
+                                   
+                        ?>
+                                    <a href="login" class="px-1 text-decoration-none text-black"><i class="bi bi-person-fill"></i></a>
+                                    <a href="/blog/disconnect" class="text-decoration-none text-black"><i class="bi bi-box-arrow-right"></i></a>
+                        <?php
+                                
+                            }else{
+                                echo '<a href="login" class="px-1 text-decoration-none text-black">Connexion</a>';
+                            }
+                        ?>
                     </div>
                 </nav>
                 <div class="bg-success d-flex justify-content-center align-items-center py-2">

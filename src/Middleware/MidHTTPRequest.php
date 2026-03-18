@@ -42,12 +42,15 @@ class MidHTTPRequest{
     public static function isConnected(){
 
         if(!isset($_SESSION["user"]["role"])){
-            self::disconnect();
+            
+            return false;
         }
+    
+        return true;
     }
 
     public static function isAdmin(){
-        
+
         if(!isset($_SESSION["user"]["role"])){
             self::disconnect();
         }

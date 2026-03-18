@@ -11,7 +11,7 @@ class LoginController{
 
     public function index(){
         new MidHTTPRequest();
-        return Render::renderView("login.php");
+        return Render::renderView("login.php", ["connected" => MidHTTPRequest::isConnected()]);
 
     }
 
@@ -21,7 +21,7 @@ class LoginController{
 
         
 
-        return Render::renderView("register.php");
+        return Render::renderView("register.php", ["connected" => MidHTTPRequest::isConnected()]);
     }
 
     public function registerValidator(){

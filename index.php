@@ -12,12 +12,14 @@ $router = new Router();
 
 
 $router->get('/', 'Homecontroller@index');
+$router->get("/disconnect", "HomeController@disconnect");
 
 $router->get("/login", "LoginController@index");
 $router->get("/loginValidator", "LoginController@loginValidator");
 $router->get("/register", "LoginController@register");
 $router->get("/registerValidator", "LoginController@registerValidator");
 $router->get("/forgotPassword", "LoginController@forgotPassword");
+
 
 $router->get("/admin/dashboard", "AdminController@dashboard");
 
