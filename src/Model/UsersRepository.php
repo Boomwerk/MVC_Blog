@@ -44,14 +44,19 @@ class UsersRepository {
                         if(password_verify($password, $data["password"])){
 
                             if($data["activate"]){
+                                $session= new MidHTTPRequest();
 
                                 if($data["role"] === "ADMIN"){
+                                   
 
-                                    return MidHTTPRequest::redirect("/blog/admin/dashboard", ["user" => ["email" => $data["email"], "pseudo" => ["pseudo"], "role" => $data["role"]]]);
+                                    $_SESSION["user"] = ["email" => $data["email"], "pseudo" => ["pseudo"], "role" => $data["role"] ];
+                                    
+                                    return MidHTTPRequest::redirect("/blog/admin/dashboard");
 
                                 }else{
 
-                                    return MidHTTPRequest::redirect("/blog/", ["user" => ["email" => $data["email"], "pseudo" => ["pseudo"], "role" => $data["role"]]]);
+                                    $_SESSION["user"] = ["email" => $data["email"], "pseudo" => ["pseudo"], "role" => $data["role"] ];
+                                    return MidHTTPRequest::redirect("/blog/");
                                 }
 
                             }else{

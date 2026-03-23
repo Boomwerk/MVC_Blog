@@ -29,7 +29,7 @@ class MidHTTPRequest{
        
         if(isset($msg) && !empty($msg)){
             session_start();
-            $_SESSION = $msg;
+            $_SESSION["msg"] = $msg;
             
             return  header("Location: $url");
 

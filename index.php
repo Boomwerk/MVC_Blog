@@ -28,6 +28,15 @@ $router->get("/forgotPassword/{token}", "LoginController@forgotPassword");
 $router->get("/user/profil", "UserController@index");
 
 $router->get("/admin/dashboard", "AdminController@dashboard");
+$router->get("/admin/articles", "AdminController@articles");
+
+$router->get("/admin/articles/add", "AdminController@articlesAdd");
+$router->get("/admin/categories/add", "AdminController@categoriesAdd");
+
+$router->get("/admin/settings", "AdminController@settings");
+$router->get("/admin/users", "AdminController@users");
+
+
 
 
 

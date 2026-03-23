@@ -12,6 +12,7 @@ class LoginController{
     public function index(){
 
         $session = new MidHTTPRequest();
+        
 
        
 

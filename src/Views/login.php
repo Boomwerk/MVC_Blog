@@ -2,27 +2,27 @@
 
    
 
-    <div class="row h-100">
+    <div class="row w-100 py-5">
 
         <div class="col-5 p-4 d-flex justify-content-center align-items-center">
             <img src="Public/assets/img/login.jpg" alt="" class="w-100">
         </div>
         <div class="col-7 d-flex flex-column align-items-center justify-content-center ">
              <?php
-                if(isset($_SESSION["error"])){
+                if(isset($_SESSION["msg"]["error"])){
             ?>
-                <div class="alert alert-danger w-50 text-center"><?= $_SESSION["error"]; ?></div>
+                <div class="alert alert-danger w-50 text-center"><?= $_SESSION["msg"]["error"]; ?></div>
             <?php
-                    unset($_SESSION["error"]);
+                    unset($_SESSION["msg"]["error"]);
                 }
             ?>
 
             <?php
-                if(isset($_SESSION["success"])){
+                if(isset($_SESSION["msg"]["success"])){
             ?>
-                <div class="alert alert-success w-50 text-center"><?= $_SESSION["success"]; ?></div>
+                <div class="alert alert-success w-50 text-center"><?= $_SESSION["msg"]["success"]; ?></div>
             <?php
-                    unset($_SESSION["success"]);
+                    unset($_SESSION["msg"]["success"]);
                 }
             ?>
 

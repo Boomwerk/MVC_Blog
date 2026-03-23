@@ -2,10 +2,10 @@
     <div class="row m-0">
         <div class="col-2 bg-success d-flex flex-column align-items-center p-4 gap-4" style="height:100vh">
 
-            <a href="/blog/admin/dashboard" class="rounded bg-dark p-2 fw-bold text-decoration-none text-white w-100 text-center" ><i class="bi bi-speedometer"></i> Dashboard</a>
+           <a href="/blog/admin/dashboard" class="rounded p-2 fw-bold text-decoration-none text-white w-100 text-center" ><i class="bi bi-speedometer"></i> Dashboard</a>
             <a href="/blog/admin/articles" class="rounded p-2 fw-bold text-decoration-none text-white w-100 text-center" ><i class="bi bi-file-earmark-text"></i> Mes Articles</a>
             <a href="/blog/admin/users" class="rounded p-2 fw-bold text-decoration-none text-white w-100 text-center" ><i class="bi bi-people-fill"></i> Les Utilisateurs</a>
-            <a href="/blog/admin/settings" class="rounded p-2 fw-bold text-decoration-none text-white w-100 text-center" ><i class="bi bi-gear"></i> Mes Paramètres</a>
+            <a href="/blog/admin/settings" class="rounded bg-dark p-2 fw-bold text-decoration-none text-white w-100 text-center" ><i class="bi bi-gear"></i> Mes Paramètres</a>
         </div>
         <div class="col-9 p-5 bg-white rounded gap-4">
 

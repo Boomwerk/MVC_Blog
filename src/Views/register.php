@@ -1,6 +1,6 @@
 <section class="py-5">
 
-    <div class="row h-100">
+    <div class="row w-100 py-5">
 
         <div class="col-5 p-4 d-flex justify-content-center align-items-center">
             
